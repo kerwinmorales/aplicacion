@@ -16,7 +16,7 @@
         <img src="app/vistas/dist/img/bombardera.png" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="#" class="d-block" style="color: #848a8a; text-decoration: none;">Kerwin Morales</a>
+        <a href="inicio" class="d-block" style="color: #848a8a; text-decoration: none;">Kerwin Morales</a>
       </div>
     </div>
 
