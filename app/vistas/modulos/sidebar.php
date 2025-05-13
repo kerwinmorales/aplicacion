@@ -53,9 +53,9 @@
         </li>
 
         <li class="nav-item">
-          <a href="reportes" class="nav-link">
+          <a href="login" class="nav-link">
             <i class="nav-icon fas fa-file-alt" style="color: #830015;"></i>
-            <p>Reportes</p>
+            <p>Login</p>
           </a>
         </li>
 

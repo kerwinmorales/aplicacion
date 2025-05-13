@@ -1,4 +1,4 @@
-<footer class="main-footer" style="background-color: #121212; color: #ffffff;">
+<footer class="main-footer" style="background-color: #121212; color: #ffffff;" > 
   <strong>
     Copyright &copy; 2014-2021 
     <a href="https://adminlte.io" style="color: #830015; text-decoration: none;">AdminLTE.io</a>.

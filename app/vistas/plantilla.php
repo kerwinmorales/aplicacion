@@ -40,7 +40,8 @@
       $_GET["ruta"] == "personas"||
       $_GET["ruta"] == "perfiles"||
       $_GET["ruta"] == "categorias"||
-      $_GET["ruta"] == "productos"
+      $_GET["ruta"] == "productos"||
+       $_GET["ruta"] == "login"
 
 
     ){

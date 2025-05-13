@@ -28,22 +28,50 @@
           <p class="text-center" style="color: #ffffff;">Registrar un producto</p>
           <form action="#" method="post">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Categoría (Ej: moto o repuesto)" style="background-color: #121212; color: #ffffff; border-color: #5A5F5F;">
+              <input type="text" class="form-control" placeholder="Categoría (Ej: moto o repuesto)"  name="productoCategoria"  style="background-color: #121212; color: #ffffff; border-color: #5A5F5F;">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Nombre del producto" style="background-color: #121212; color: #ffffff; border-color: #5A5F5F;">
+              <input type="text" class="form-control" placeholder="Nombre del producto" name="productoNombre" style="background-color: #121212; color: #ffffff; border-color: #5A5F5F;">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Marca (Ej: Honda, Suzuki)" style="background-color: #121212; color: #ffffff; border-color: #5A5F5F;">
+              <input type="text" class="form-control" placeholder="Marca (Ej: Honda, Suzuki)" name="productoMarca" style="background-color: #121212; color: #ffffff; border-color: #5A5F5F;">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Modelo (Ej: 2024)" style="background-color: #121212; color: #ffffff; border-color: #5A5F5F;">
+              <input type="text" class="form-control" placeholder="Modelo (Ej: 2024)" name="productoModelo" style="background-color: #121212; color: #ffffff; border-color: #5A5F5F;">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Número documento" style="background-color: #121212; color: #ffffff; border-color: #5A5F5F;">
+              <input type="text" class="form-control" placeholder="Precio"  name="productoPrecio"  style="background-color: #121212; color: #ffffff; border-color: #5A5F5F;">
             </div>
+
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="cantidad"  name="productoCantidad"  style="background-color: #121212; color: #ffffff; border-color: #5A5F5F;">
+            </div>
+
+
+
+            <?php
+
+                    /*=============================================
+                    FORMA EN QUE SE INSTA­NCIA LA CLASE DE UN MÉTODO ESTÁTICO
+                    =============================================*/
+
+                    $producto = ControladorProducto::ctrProducto();
+
+                    if ($producto === 'ok') {
+                        // Aquí sí entra cuando el método devuelve "ok"
+                        echo '<script>
+                            if (window.history.replaceState) {
+                                window.history.replaceState(null, null, window.location.href);
+                            }
+                        </script>';
+                        echo '<div class="alert alert-success">El producto ha sido guardado</div>';
+                    }
+
+                ?>
+
+
             <div class="text-center">
-              <button type="submit" class="btn" style="background-color: #830015; color: #ffffff;">Registrar</button>
+              <button type="submit" class="btn" style="background-color: #830015; color: #ffffff;">Registrar producto</button>
             </div>
           </form>
         </div>

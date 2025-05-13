@@ -1,57 +1,78 @@
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper" style="background-color: #121212;">
-  <!-- Content Header -->
-  <div class="content-header">
-    <div class="container-fluid">
-      <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1 class="m-0 text-white">Administración de Personas</h1>
-        </div>
-        <div class="col-sm-6">
-          <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="personas" style="color: #830015;">Inicio</a></li>
-            <li class="breadcrumb-item active text-white">Administración de personas</li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container-fluid" style="background-color: #0d0d0d; min-height: 100vh;">
+  <div class="container py-5">
 
-  <!-- Main content -->
-  <section class="content">
-    <div class="container-fluid d-flex justify-content-center">
-      <div class="card col-md-6" style="background-color: #1e1e1e; border: 1px solid #5A5F5F;">
-        <div class="card-header text-center">
-          <a href="#" class="h3" style="color: #ffffff;"><b>ADSO</b>SENA</a>
+    <div class="d-flex justify-content-center text-center py-3">
+
+      <form class="p-5" method="post" style="background-color: #1e1e1e; border: 1px solid #5A5F5F; border-radius: 10px; width: 100%; max-width: 600px; color: #ffffff;">
+      <h1>Registrar un usuario</h1>
+        <div class="form-group text-left">
+          <label for="nombre">Nombre:</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" style="background-color: #121212; border-color: #5A5F5F; color: #ffffff;">
+                <i class="fas fa-user"></i>
+              </span>
+            </div>
+            <input type="text" class="form-control" id="nombre" name="registroNombre" style="background-color: #121212; color: #ffffff; border-color: #5A5F5F;">
+          </div>
         </div>
-        <div class="card-body">
-          <p class="text-center" style="color: #ffffff;">Registrar una persona</p>
-          <form action="#" method="post">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Nombre completo" style="background-color: #121212; color: #ffffff; border-color: #5A5F5F;">
+
+        <div class="form-group text-left">
+          <label for="telefono">Teléfono:</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" style="background-color: #121212; border-color: #5A5F5F; color: #ffffff;">
+                <i class="fas fa-phone"></i>
+              </span>
             </div>
-            <div class="form-group">
-              <input type="email" class="form-control" placeholder="Correo electrónico" style="background-color: #121212; color: #ffffff; border-color: #5A5F5F;">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Teléfono" style="background-color: #121212; color: #ffffff; border-color: #5A5F5F;">
-            </div>
-            <div class="form-group">
-              <select class="form-control" style="background-color: #121212; color: #ffffff; border-color: #5A5F5F;">
-                <option>CC</option>
-                <option>TI</option>
-                <option>PPT</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Número de documento" style="background-color: #121212; color: #ffffff; border-color: #5A5F5F;">
-            </div>
-            <div class="text-center">
-              <button type="submit" class="btn" style="background-color: #830015; color: #ffffff;">Registrar</button>
-            </div>
-          </form>
+            <input type="text" class="form-control" id="telefono" name="registroTelefono" style="background-color: #121212; color: #ffffff; border-color: #5A5F5F;">
+          </div>
         </div>
-      </div>
+
+        <div class="form-group text-left">
+          <label for="email">Correo electrónico:</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" style="background-color: #121212; border-color: #5A5F5F; color: #ffffff;">
+                <i class="fas fa-envelope"></i>
+              </span>
+            </div>
+            <input type="email" class="form-control" id="email" name="registroCorreo" style="background-color: #121212; color: #ffffff; border-color: #5A5F5F;">
+          </div>
+        </div>
+
+        <div class="form-group text-left">
+          <label for="pwd">Contraseña:</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" style="background-color: #121212; border-color: #5A5F5F; color: #ffffff;">
+                <i class="fas fa-lock"></i>
+              </span>
+            </div>
+            <input type="password" class="form-control" id="pwd" name="registroClave" style="background-color: #121212; color: #ffffff; border-color: #5A5F5F;">
+          </div>
+        </div>
+
+        <?php
+          $registro = ControladorRegistro::ctrRegistro();
+
+          if ($registro === 'ok') {
+            echo <<<HTML
+              <script>
+                if (window.history.replaceState) {
+                  window.history.replaceState(null, null, window.location.href);
+                }
+              </script>
+              <div class="alert alert-success mt-3">El usuario ha sido registrado</div>
+            HTML;
+          }
+        ?>
+
+        <button type="submit" class="btn mt-3" style="background-color: #830015; color: #ffffff;">Registrar</button>
+
+      </form>
+
     </div>
-  </section>
+
+  </div>
 </div>
